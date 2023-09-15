@@ -6,7 +6,7 @@
         'FRA'
     ];
 
-    $paissos = [
+    $paisos = [
         'ESP' => [
             'nom' => 'Espanya',
             'codi' => 724
@@ -39,8 +39,8 @@
         echo "</br>";
         foreach ($id as $codi)
         {
-            echo "El país {$paissos[$codi]['nom']} utilitza el codi alfa-3 $codi";
-            echo "amb el codi numèric: {$paissos[$codi]['codi']}</br>";
+            echo "El país {$paisos[$codi]['nom']} utilitza el codi alfa-3 $codi";
+            echo "amb el codi numèric: {$paisos[$codi]['codi']}</br>";
             echo "</br>";
         }
     ?>

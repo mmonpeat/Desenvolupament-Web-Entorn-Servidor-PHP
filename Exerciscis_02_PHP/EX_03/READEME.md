@@ -1,4 +1,4 @@
 # READEME EX 03
 
-El foreach recorre el array id i mostre info del array paissos. Cada iteraciò mostra informació del nom del pais i i el codi numeric.
-Es mes complexe, en un inici no he sapigut com organitzar les dades en els arrays, com demanava l'enunciat. He demanata ajuda al chat gpt i he mirat diapositives
+El foreach recorre l'array id i mostra informació de l'array països (paisos). Cada iteració mostra informació del nom del país i el codi numèric.
+És més complex, en un inici no he sabut com organitzar les dades en els arrays, com demanava l'enunciat. He demanat ajuda al ChatGPT i he mirat diapositives.
