@@ -1,7 +1,6 @@
 # EX_03
 
-ChatGPT m'ha ajudat bastant.
-El qu em'ha costat més que funciones ha sigut :
+El que m'ha costat més que funciones ha sigut:
 
 public function evaluateFormulaForSensor($num_sensor, $formula)
 {
