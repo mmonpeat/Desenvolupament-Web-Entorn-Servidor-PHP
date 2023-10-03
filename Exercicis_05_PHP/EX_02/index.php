@@ -7,7 +7,7 @@
 <h1>Formulari</h1>
 <form action="cookies.php" method="post">
     <?php
-        $nom = "Undifined";
+        $nom = "Undefined";
         $llengua = "cat";
     ?>
     <label for="nom">Nom d'Usuari:</label>
