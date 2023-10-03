@@ -1,3 +1,4 @@
+## EX_02
 S'obre un formulari amb l'atribut action establit com a "cookies.php" i el mètode de transferència de dades method com a "post". 
 Això significa que quan es premi el botó "Enviar", les dades del formulari s'enviaran a un script PHP anomenat "cookies.php" mitjançant una sol·licitud POST.
 S'afegeixen dues variables PHP, $nom i $llengua, amb valors inicials.
