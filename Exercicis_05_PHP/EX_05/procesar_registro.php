@@ -1,0 +1,50 @@
+<?php
+try {
+    $conexion = new PDO('mysql:host=fmesasc.com;dbname=daw2', 'daw2', 'Gimbernat');
+    // Verificar si la conexión a la base de datos fue exitosa
+    if (!$conexion) {
+        die("Error en la conexión a la base de datos.");
+    }
+    $crearTablaSQL = "CREATE TABLE IF NOT EXISTS usuaris (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nombre VARCHAR(255) NOT NULL,
+        correo VARCHAR(255) NOT NULL UNIQUE,
+        contrasena VARCHAR(255) NOT NULL,
+        fecha_nacimiento DATE NOT NULL,
+        es_administrador BOOLEAN NOT NULL,
+        imagen BLOB
+    )";
+    $conexion->exec($crearTablaSQL);
+    // Obtener los datos del formulario de registro
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT); // Encriptar la contraseña
+    $fechaNacimiento = $_POST['fecha_nacimiento'];
+    $esAdministrador = false; // Por defecto, no son administradores
+
+    // Verificar si el correo ya está registrado
+    $stmt = $conexion->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
+    $stmt->bindParam(1, $correo);
+    $stmt->execute();
+    $rowCount = $stmt->fetchColumn();
+
+    if ($rowCount == 0) {
+        // El correo no existe, podemos insertar el nuevo usuario
+        $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena, fecha_nacimiento, es_administrador) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bindParam(1, $nombre);
+        $stmt->bindParam(2, $correo);
+        $stmt->bindParam(3, $contrasena);
+        $stmt->bindParam(4, $fechaNacimiento);
+        $stmt->bindParam(5, $esAdministrador);
+
+        $stmt->execute();
+
+        echo "Registro exitoso. Ahora puedes <a href='inicio_sesion.php'>iniciar sesión</a>.</br>";
+    } else {
+        echo "El correo electrónico ya está registrado. Por favor, utiliza otro correo.</br>";
+    }
+} catch (PDOException $e) {
+    // Mostrar el error
+    echo "Error: " . $e->getMessage();
+}
+?>
