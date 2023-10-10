@@ -5,7 +5,10 @@ En els arxius de la instalació de PhpStorm teniem un arxiu anomenat php.ini-dev
 
 Entrem en aquest arxiu, la linia 768 la descomentem, per que funcionin les conexions amb bases de dades amb Windows.
 Aquestes són les lineas:
+
 ; On windows:
+
 ; extension_dir = "ext"
+
 LLavors aquesta última li teiem el ; per descomentar-la.
 
