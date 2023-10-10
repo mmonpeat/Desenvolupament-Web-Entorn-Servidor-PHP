@@ -8,7 +8,7 @@ Aquestes són les lineas:
 
 ; On windows:
 
-; extension_dir = "ext"
+extension_dir = "ext"
 
-LLavors aquesta última li teiem el ; per descomentar-la.
+LLavors aquesta última li hem tret el ; per descomentar-la.
 
