@@ -12,3 +12,5 @@ extension_dir = "ext"
 
 LLavors aquesta última li hem tret el ; per descomentar-la.
 
+Descomentem la linea 944, pdo_mysql
+![imatge](https://github.com/mmonpeat/DWES/assets/115364869/207d4602-5e3c-4e85-97a6-d15efd87be08)
