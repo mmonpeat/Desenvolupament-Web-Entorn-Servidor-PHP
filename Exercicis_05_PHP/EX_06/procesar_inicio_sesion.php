@@ -33,28 +33,25 @@ foreach ($usuarios as $usuario) {
     echo "Correo: " . $usuario['correo'] . "<br><br>";
 }
 
-// Mostrar la paginación con enlaces a páginas anteriores y siguientes
 $totalPaginas = ceil($totalUsuarios / $porPagina);
 if ($totalPaginas > 1) {
     echo "<div class='pagination'>";
-    /*if ($pagina > 1) {
-        echo "<a href='lista_usuarios.php?pagina=" . ($pagina - 1) . "'>&lt; Anterior</a>";
-    }*/
+    if ($pagina > 1) {
+        echo "<a href='procesar_inicio_sesion.php?pagina=" . ($pagina - 1) . "'>&lt; Anterior&nbsp;&nbsp;&nbsp;</a>";
+    }
     for ($i = 1; $i <= $totalPaginas; $i++) {
         if ($i == $pagina) {
             echo "<span class='current'>$i</span>";
         } else {
-            echo "<a href='lista_usuarios.php?pagina=$i'>$i</a>";
+            echo "<a href='procesar_inicio_sesion.php?pagina=$i'>$i</a>";
         }
     }
-    if ($pagina < $totalPaginas)
-    {
-        echo "</br>";
-        echo "</br>";
-        echo "<a href='inicio_sesion.php?pagina=" . ($pagina + 1) . "'>Sortir &gt;</a>";
+    if ($pagina < $totalPaginas) {
+        echo "<a href='procesar_inicio_sesion.php?pagina=" . ($pagina + 1) . "'>&nbsp;&nbsp;&nbsp;Siguiente &gt;</a>";
     }
-    echo "</div>";
+        echo "</div>";
 }
+
 
 ?>
 
