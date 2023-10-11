@@ -26,6 +26,8 @@ Enllaç per a Iniciar Sessió:
 
 #### inicio_sesion.php
 
+Aquest codi HTML crea una pàgina web d'inici de sessió amb un formulari. Els usuaris poden ingressar el seu correu electrònic i contrasenya, que després s'enviaran al servidor a través del mètode POST per a ser processats per processar_inicio_sesion.php.
+
 
 ### BACK-END:
 
@@ -47,7 +49,17 @@ Es maneja qualsevol excepció que pugui ocórrer durant el procés de registre i
 
 #### procesar_inicio_sesion.php
 
+Estableix una connexió a una base de dades MySQL utilitzant PDO.
 
+Obté les dades del formulari d'inici de sessió, és a dir, el correu electrònic i la contrasenya que l'usuari proporciona.
+
+Realitza una consulta SQL per a buscar un usuari en la base de dades el correu electrònic de la qual coincideixi amb el proporcionat.
+
+Verifica si es va trobar un usuari i si la contrasenya proporcionada coincideix amb la contrasenya emmagatzemada en la base de dades (usant password_verify per a comparar contrasenyes segures emmagatzemades amb hash).
+
+Si les credencials són correctes, mostra un missatge "Has iniciat sessió en el teu compte". Si no són correctes, mostra un missatge d'error "Error: Correu o contrasenya incorrectes".
+
+Finalment, tanca la connexió a la base de dades.
 
 
 
