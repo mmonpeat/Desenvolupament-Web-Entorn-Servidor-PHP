@@ -4,7 +4,7 @@ Connecta a la base de dades utilitzant l'extensió PDO (PHP Data Objects). La in
 
 Defineix paràmetres de paginació. S'estableix que es mostraran 3 usuaris per pàgina, i es determina la pàgina actual en funció d'un paràmetre anomenat pàgina que es passa a través de la URL (utilitzant $_GET). Si no es proporciona la variable pàgina, s'assumeix que la pàgina és la primera (1).
 
-Executa una consulta SQL per a obtenir els usuaris *paginados. La consulta es realitza utilitzant *LIMIT per a seleccionar un rang específic d'usuaris basat en la pàgina actual i la quantitat per pàgina. Els resultats s'emmagatzemen en la variable $usuaris en un format de matriu associativa.
+Executa una consulta SQL per a obtenir els usuaris *paginados. La consulta es realitza utilitzant LIMIT per a seleccionar un rang específic d'usuaris basat en la pàgina actual i la quantitat per pàgina. Els resultats s'emmagatzemen en la variable $usuaris en un format de matriu associativa.
 
 Executa una consulta SQL addicional per a obtenir el total d'usuaris en la taula. Això és útil per a calcular la quantitat total de pàgines d'usuaris disponibles.
 
