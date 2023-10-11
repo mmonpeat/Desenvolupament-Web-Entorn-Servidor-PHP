@@ -1,5 +1,4 @@
 <?php
-// Conecta a la base de datos (asegúrate de configurar la conexión)
 
 try {
     $conexion = new PDO('mysql:host=fmesasc.com;dbname=daw2', 'daw2', 'Gimbernat');
