@@ -14,23 +14,36 @@ try {
         es_administrador BOOLEAN NOT NULL,
         imagen BLOB
     )";
+    //echo 'Taula creada</br>';
     $conexion->exec($crearTablaSQL);
-    // Obtener los datos del formulario de registro
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
-    $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT); // Encriptar la contraseña
-    $fechaNacimiento = $_POST['fecha_nacimiento'];
+    //echo 'conexioooo</br>';
+
+// Obtener los datos del formulario de registro
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+    $correo = isset($_POST['correo']) ? $_POST['correo'] : null;
+    $contrasena = isset($_POST['contrasena']) ? password_hash($_POST['contrasena'], PASSWORD_DEFAULT) : null; // Encriptar la contraseña
+    $fechaNacimiento = isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : null;
     $esAdministrador = false; // Por defecto, no son administradores
 
+    /*
+    // guarda tota la taula usuaris
+    $stmt = $conexion->query("SELECT * FROM usuaris");
+
+    echo "Registros de la tabla:</br>";
+
+    while ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo $fila['id'] . " - " . $fila['correo'] . '</br>';
+    }*/
+
     // Verificar si el correo ya está registrado
-    $stmt = $conexion->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
+    $stmt = $conexion->prepare("SELECT COUNT(*) FROM usuaris WHERE correo = ?");
     $stmt->bindParam(1, $correo);
     $stmt->execute();
     $rowCount = $stmt->fetchColumn();
 
     if ($rowCount == 0) {
         // El correo no existe, podemos insertar el nuevo usuario
-        $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena, fecha_nacimiento, es_administrador) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conexion->prepare("INSERT INTO usuaris (nombre, correo, contrasena, fecha_nacimiento, es_administrador) VALUES (?, ?, ?, ?, ?)");
         $stmt->bindParam(1, $nombre);
         $stmt->bindParam(2, $correo);
         $stmt->bindParam(3, $contrasena);
