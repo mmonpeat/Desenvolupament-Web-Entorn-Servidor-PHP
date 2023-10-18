@@ -33,7 +33,7 @@ foreach ($usuarios as $usuario) {
     echo "Correo: " . $usuario['correo'] . "<br><br>";
     // Verificar si la columna 'imagen' está definida en el resultado
     if (isset($usuario['imagen'])) {
-        echo "<img src='" . $usuario['imagen'] . "' alt='Imagen de perfil'><br>";
+        echo "<img src='/Exercicis_06_PHP/" . $usuario['imagen'] . "' alt='Imagen de perfil'><br>";
     } else {
         echo "Imagen de perfil no disponible<br>";
     }
