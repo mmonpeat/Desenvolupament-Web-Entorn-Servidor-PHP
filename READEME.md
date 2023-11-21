@@ -9,6 +9,8 @@ https://www.php.net/downloads.php
 
 ![image](https://github.com/mmonpeat/DWES/assets/115364869/4c87ff6d-1e5e-4d84-909c-9f0cc323ed0d)
 
+Vas a File->Setings 
+![image](https://github.com/mmonpeat/DWES/assets/115364869/4f87a14d-6df6-4426-acec-225e0bb3dcff)
 
 ## Configura el comportament de PHP per s'executar un servidor web.
 En els arxius de la instalació de PhpStorm teniem un arxiu anomenat php.ini-develoment llavors cal caanviar-li el nom a php.ini
